@@ -34,7 +34,7 @@ for j = 1 : width
             img_source_lab(:,:,c) = (sd_target/sd_source)*(img_source_lab(:,:,c)-mean_source) + mean_target;
         end
 end
-toc
+
 % Transform back to RGB
 img_result= lab2rgb(img_source_lab);
 
