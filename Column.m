@@ -3,8 +3,8 @@ close all; %close all opening figures
 clc; %clear the command window
 
 % Read images: Target and the Source
-img_source = imread('UD_winter.jpg'); 
-img_target = imread('UD_spring.jpg');
+img_source = imread('source.jpg'); 
+img_target = imread('target.jpg');
 
 % Resize the images
 height = 200;
@@ -31,10 +31,10 @@ for j = 1 : width
             mean_target= mean(temp(:));
             sd_target= std(temp(:));
             
-            img_source_lab(:,:,c) = (sd_target/sd_source)*(img_source_lab(:,:,c)-mean_source) + mean_target;
+            img_source_lab(:,:,c) = (sd_target/sd_source)*(img_source_lab(:,:,c)-mean_source)+ mean_target;
         end
 end
-
+toc
 % Transform back to RGB
 img_result= lab2rgb(img_source_lab);
 
