@@ -31,8 +31,7 @@ for j = 1 : width
             mean_target= mean(temp(:));
             sd_target= std(temp(:));
             
-            img_source_lab(:,:,c) = (sd_target/sd_source)*(img_source_lab(:,:,c) ...
-                -mean_source) + mean_target;
+            img_source_lab(:,:,c) = (sd_target/sd_source)*(img_source_lab(:,:,c)-mean_source) + mean_target;
         end
 end
 toc
